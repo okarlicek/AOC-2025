@@ -41,7 +41,6 @@ fn get_answer_a(disjoint_set: &DisjointSet) -> usize {
     sets.sort_by(|a, b| b.len().cmp(&a.len()));
 
     for set in sets[0..3].iter() {
-        println!("{:?}", set);
         answer_a *= set.len();
     }
 
@@ -64,7 +63,7 @@ fn join_boxes_and_get_answer_b(
             return junction_boxes[box_distance.left_index].x * junction_boxes[box_distance.right_index].x;
         }
     }
-    return 0;
+    panic!("No solution found!");
 }
 
 fn sort_distances(distances: &mut Vec<BoxesDistance>) {
